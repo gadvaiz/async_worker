@@ -15,12 +15,12 @@ also start the node server.js and consumer.js
 
 available routes is:
 
-localhost:80//email/ID/status?[options]
+http://localhost/email/ID/status?[options]
 for example:
-localhost:80//email/ID/status?status=recive
-localhost:80//sms/ID/status?[options]
+http://localhost/email/ID/status?status=recive
+http://localhost/sms/ID/status?[options]
 for example:
-localhost:80//email/ID/status?status=recive
+http://localhost/email/ID/status?status=recive
 
 http request type : POST
 
