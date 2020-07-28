@@ -1,7 +1,7 @@
 const { publish } = require("./../publisher");
 
 module.exports.addEmailToQueue = (req, res, next) => {
-  //    //public message to EMAIL QUEUE
+  //public message to EMAIL QUEUE
   const message = {
     ...req.body,
     id: req.params.EMAIL_ID,
