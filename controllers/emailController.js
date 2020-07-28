@@ -1,12 +1,19 @@
-const axios = require("axios");
+const { publish } = require("./../publisher");
 
 module.exports.addEmailToQueue = (req, res, next) => {
   //  create HTTP to _EMAIL_QUEUE_
-    axios({
-      method: "POST",
-      url: `http://domain/_EMAIL_QUEUE_`,
-      data: { ...req.body, id: req.params.EMAIL_ID, status: req.query.status },
-    });
+  // axios({
+  //   method: "POST",
+  //   url: `http://domain/_EMAIL_QUEUE_`,
+  //   data: { ...req.body, id: req.params.EMAIL_ID, status: req.query.status },
+  // });
+  const message = {
+    ...req.body,
+    id: req.params.EMAIL_ID,
+    status: req.query.status,
+  };
+
+  publish("email", message);
 
   //send HTTP 200 to the client
   res.status(200).json({

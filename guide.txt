@@ -1,0 +1,32 @@
+DockerID: gad8989vaizgad8989vaiz
+Password: gAd8989vaiz
+
+
+//upload to github
+//send mail to eldad with instructions how to use.
+run the folowing commands
+docker-compose up --build
+
+//url
+localhost:80//email/ID/status?[options]
+localhost:80//sms/ID/status?[options]
+
+// get container for rabbitMQ server
+docker pull rabbitmq:3-management
+// run rabit mq 
+docker run -d -p 15672:15672 -p 5672:5672 --name rabbit-test-for-medium rabbitmq:3-management
+
+//get container for mongoDB server
+docker run --name rabbit-mongo -d mongo:4.2.8
+//run mongo localy on port 27017
+docker run -p 27017:27017 --name my-mongo -d mongo:4.2.8
+
+// get container of nodejs with webserver (contains publish to rabbitMQ and consumer)
+
+// run the folwoing commands
+
+// 1. starting the server to get calls and publish them to the queue
+npm run start
+// 2. start to consume asynchronously form queues sms and emails and save message to relevant db collection
+npm run cosume
+
